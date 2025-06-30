@@ -758,6 +758,7 @@ function process_g1000n1_actions()
     if direct_button_pressed then
         if mode_shift_state then
             -- custom enhancement... shift -D> is the NRST soft key on primary G1000 device.  This brings up the Nearest Airport dialogue
+            display_bottom_left_text("NRST")
             command_once("sim/GPS/g1000n1_softkey11") -- nearest airport
             toggle_shift_state()
         else
