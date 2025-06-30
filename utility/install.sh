@@ -1,4 +1,12 @@
 #!/bin/bash
+#
+# Script to copy Octavi IFR-1 scripts to proper X-Plane directory
+#
+# Usage:
+# XPLANE_BASE_DIRECTORY={path to your X-Plane install} /bin/bash install.sh
+#
+# ex: XPLANE_BASE_DIRECTORY=/mnt/simulators/X-Plane\ 12 /bin/bash install.sh
+#
 
 # Resolve the directory of this script
 SCRIPT_DIR="$(dirname "$(realpath "$0")")"
