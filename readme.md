@@ -47,7 +47,7 @@ These control the COM1 and COM2 radios.  When either of these buttons are select
 These control the NAV1 and NAV2 radios.  When either of these buttons are selected, rotate the inner and outer knobs to choose the desired frequency.  To swap the active and standby frequencies, press the <--> (swap) button below the knobs.
 
 ##### FMS1 and FMS2
-These control the flight management systems.  Depending on the aircraft, FMS1 represents the pilot or primary flight management screen, and FMS2 represents the copilot or right flight management screen.  
+These control the flight management systems.  Depending on the aircraft, FMS1 represents the pilot or primary flight management screen, and FMS2 represents the copilot or right flight management screen.    
 When one of these is active, the action buttons along the right-side of the IFR-1, and the blue-labeled functions along the bottom of the IFR-1 can be used to control the flight management system.
 
 ##### AP
@@ -56,14 +56,24 @@ Functions like altitude and VS can be adjusted using the inner and outer knobs.
 VPATH can be armed by pressing the inner knob switch.
 
 ##### XPDR
+This button controls the transponder code.  When this is selected, use the inner and outer knobs to change the squawk code.
 
 ##### HDG
+_To activate this button, first press the COM1 button. Then, press down on the inner knob button.  This activates the HDG feature of this button.  You will see a small 'HDG' indicator on-screen in the bottom-right corner for a few seconds._
+This button controls the heading while navigating. Use the inner and outer knobs to adjust the heading. 
 
 ##### BARO
+_To activate this button, first press the COM2 button. Then, press down on the inner knob button.  This activates the BARO feature of this button.  You will see a small 'BARO' indicator on-screen in the bottom-right corner for a few seconds._
+This button controls the barometer/altimeter setting. Use the inner and outer knobs to adjust the barometer value.
 
 ##### CRS1 and CRS2
+_To activate this button, first press the NAV1 or NAV2 button. Then, press down on the inner knob button.  This activates the CRS1 or CRS2 feature of this button.  You will see a small 'CRSx' indicator on-screen in the bottom-right corner for a few seconds._
 
 ##### MODE
+_To activate this button, first press the XPDR button. Then, press down on the inner knob button.  This activates the MODE feature of this button.  You will see a small 'MODE' indicator on-screen in the bottom-right corner for a few seconds._
+This button controls the transponder mode.      
+
+Use the inner and outer knobs to change the transponder mode.
 
 
 
