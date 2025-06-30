@@ -845,12 +845,12 @@ function change_leds()
     end -- BC
 
     -- Custom enhancement
-    -- To add feedback to the user, quickly flash leds when the shift/second function is turned on
+    -- To add feedback to the user, quickly flash LEDs when the shift/second function is turned on
     if (mode_shift_state ~= mode_shift_state_last) then
         -- has the second function state changed?
         if (mode_shift_state) then
             -- is it now true?
-            ap_active = 1 + 2 + 4 + 8 + 16 -- turn all of the leds on
+            ap_active = 1 + 2 + 4 + 8 + 16 -- turn all of the LEDs on
         end
         mode_shift_state_last = mode_shift_state -- save state of second_fnc for the next check
     end
