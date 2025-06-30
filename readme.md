@@ -83,4 +83,4 @@ Use the inner and outer knobs to change the transponder mode.
 This script was originally created through reverse engineering and the guidance of sample scripts provided by Octavi.
 For more information about the Octavi IFR-1, please visit https://octavi.net.
 
-This project is not affiliated with Octavi.
+This project is not affiliated with or supported by Octavi. This is a community effort.
