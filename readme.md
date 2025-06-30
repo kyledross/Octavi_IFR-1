@@ -53,7 +53,8 @@ When one of these is active, the action buttons along the right-side of the IFR-
 ##### AP
 This button controls the autopilot system.  When this is selected, the white-labeled action buttons along the bottom of the IFR-1 device can be used to control the autopilot.  
 Functions like altitude and VS can be adjusted using the inner and outer knobs.  
-VPATH can be armed by pressing the inner knob switch.
+VPATH can be armed by pressing the inner knob switch.  
+FLC can be selected by pressing the <--> (swap) button beneath the knobs.
 
 ##### XPDR
 This button controls the transponder code.  When this is selected, use the inner and outer knobs to change the squawk code.
