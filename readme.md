@@ -17,7 +17,7 @@ In order for this script to locate the Octavi IFR-1 device, you must do the foll
 1. If the Octavi IFR-1 device is attached, disconnect it.
 2. Create udev device rule for the device by running
 ```bash
-sudo echo "SUBSYSTEM==\"hidraw\", ATTRS{idProduct}==\"e6d6\", ATTRS{idVendor}==\"04d8\", MODE=\"0777\"" | sudo tee /etc/udev/rules.d/99-my-hid-device.rules
+echo "SUBSYSTEM==\"hidraw\", ATTRS{idProduct}==\"e6d6\", ATTRS{idVendor}==\"04d8\", MODE=\"0777\"" | sudo tee /etc/udev/rules.d/99-my-hid-device.rules
 ```
 3. Force Linux to reload the rules by running
 ```bash
