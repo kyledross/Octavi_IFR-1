@@ -97,11 +97,9 @@ end
 
 if first_HID_device == nil then
     print("Octavi: device not found.")
-    display_bottom_left_text("Octavi IFR-1 not found")
     display_end_time = os.clock() + 20
 else
     hid_set_nonblocking(first_HID_device, 1)
-    display_bottom_left_text("Octavi IFR-1 ready")
     display_end_time = os.clock() + 20
 end
 
