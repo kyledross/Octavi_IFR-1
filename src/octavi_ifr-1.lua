@@ -849,7 +849,7 @@ function change_leds()
         -- has the second function state changed?
         if (mode_shift_state) then
             -- is it now true?
-            ap_active = 1 + 2 + 4 + 8 + 16 -- turn all of the LEDs on
+            ap_active = 1 + 2 + 4 + 8 + 16 + 32 -- turn all of the LEDs on
         end
         mode_shift_state_last = mode_shift_state -- save state of second_fnc for the next check
     end
