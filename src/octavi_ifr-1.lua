@@ -1,3 +1,5 @@
+-- GPL-3.0-or-later
+
 -- Octavi IFR-1 Interface Script
 --
 -- This is a script for reading and interacting with the Octavi IFR-1 flight simulator interface.

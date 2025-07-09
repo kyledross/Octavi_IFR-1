@@ -1,4 +1,5 @@
 # Octavi IFR-1 Script for X-Plane 12 and FlyWithLua
+
 This script allows the use of the Octavi IFR-1 device with the Linux version of X-Plane through the use of the FlyWithLua plugin. 
 For Windows-based installations of X-Plane, there are other plugins available for the Octavi IFR-1 device.  See the Octavi website for more information.
 
@@ -111,9 +112,11 @@ This button controls the transponder mode.
 
 Use the inner and outer knobs to change the transponder mode.
 
-
-
 ### Attributions
 
-This script was originally created through reverse engineering and the guidance of sample scripts provided by Octavi.
-For more information about the Octavi IFR-1, please visit https://octavi.net.
+This script was originally created through reverse engineering and the guidance of sample scripts provided by Octavi GmbH.
+
+### License
+
+Please refer to the included LICENSE file.  
+GPL-3.0-or-later

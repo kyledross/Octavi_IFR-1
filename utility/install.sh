@@ -1,5 +1,7 @@
 #!/bin/bash
 #
+# GPL-3.0-or-later
+#
 # Script to copy Octavi IFR-1 scripts to proper X-Plane directory.
 # This is mostly intended for use in a development environment (such as IntelliJ IDEA) to quickly deploy the scripts
 # for debugging.
