@@ -10,9 +10,66 @@ local display_pop_up = 1 -- 0 = off, 1 = on
 
 print("Octavi: script running.")
 
--- load datarefs and helper functions
-dofile(SCRIPT_DIRECTORY .. "dataref_definitions.lua")
-dofile(SCRIPT_DIRECTORY .. "bitwise_operators.lua")
+-- setup datarefs
+COM1 = dataref_table("sim/cockpit2/radios/actuators/com1_standby_frequency_hz_833")
+COM2 = dataref_table("sim/cockpit2/radios/actuators/com2_standby_frequency_hz_833")
+NAV1 = dataref_table("sim/cockpit/radios/nav1_stdby_freq_hz")
+NAV2 = dataref_table("sim/cockpit/radios/nav2_stdby_freq_hz")
+HDG1 = dataref_table("sim/cockpit/autopilot/heading_mag")
+G430_NCS = dataref_table("sim/cockpit/g430/g430_nav_com_sel")
+ADF1 = dataref_table("sim/cockpit/radios/adf1_freq_hz")
+XPDR = dataref_table("sim/cockpit/radios/transponder_code")
+AP_MODE = dataref_table("sim/cockpit/autopilot/autopilot_mode")
+AP_STATE = dataref_table("sim/cockpit/autopilot/autopilot_state")
+AP_ALT = dataref_table("sim/cockpit/autopilot/altitude")
+AP_VS = dataref_table("sim/cockpit/autopilot/vertical_velocity")
+dataref("NAV1_OBS", "sim/cockpit2/radios/actuators/nav1_obs_deg_mag_pilot", "writable")
+dataref("NAV2_OBS", "sim/cockpit2/radios/actuators/nav2_obs_deg_mag_pilot", "writable")
+dataref("COM1_POWER", "sim/cockpit2/radios/actuators/com1_power", "writable")
+dataref("ADF1_CARD", "sim/cockpit2/radios/actuators/adf1_card_heading_deg_mag_pilot", "writable")
+dataref("BACKCOURSE_ON","sim/cockpit2/autopilot/backcourse_on")
+dataref("APPROACH_STATUS","sim/cockpit2/autopilot/approach_status")
+
+-- helper functions
+function bit(p)
+    return 2 ^ (p - 1)  -- 1-based indexing
+end
+
+function hasbit(x, p)
+    return x % (p + p) >= p
+end
+
+function setbit(x, p)
+    return hasbit(x, p) and x or x + p
+end
+
+function clearbit(x, p)
+    return hasbit(x, p) and x - p or x
+end
+
+function OctToDec(value)
+    base = 8
+    local octal_string = tostring(value)
+    local decimal = 0
+    for char in octal_string:gmatch(".") do
+        local n = tonumber(char, base)
+        if not n then return 0 end
+        decimal = decimal * base + n
+    end
+    return decimal
+end
+
+function DecToOct(value)
+    base = 10
+    local decimal_string = string.format("%o",value)
+    local octal = 0
+    for char in decimal_string:gmatch(".") do
+        local n = tonumber(char, base)
+        if not n then return 0 end
+        octal = octal * base + n
+    end
+    return octal
+end
 
 -- setup constants metatable
 local constants = {}

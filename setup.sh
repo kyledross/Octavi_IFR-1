@@ -116,7 +116,7 @@ success "Found X-Plane installation at: $XPLANE_ROOT"
 
 # Check if X-Plane is running
 info "Checking if X-Plane is running..."
-if ps -ef | grep -v grep | grep -q "[X]-Plane-x86_64"; then
+if pgrep -f "X-Plane-x86_64" > /dev/null; then
     error "X-Plane is currently running. Please exit X-Plane completely and run this script again."
 fi
 
