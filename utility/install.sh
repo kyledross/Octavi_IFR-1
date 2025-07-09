@@ -1,6 +1,12 @@
 #!/bin/bash
 #
-# Script to copy Octavi IFR-1 scripts to proper X-Plane directory
+# Script to copy Octavi IFR-1 scripts to proper X-Plane directory.
+# This is mostly intended for use in a development environment (such as IntelliJ IDEA) to quickly deploy the scripts
+# for debugging.
+#
+# For general setup of the Octavi IFR-1 device, please use the setup.sh script, instead.
+#
+# ----------------------------------------------------------------------------------------------------
 #
 # Usage:
 # XPLANE_BASE_DIRECTORY={path to your X-Plane install} /bin/bash install.sh

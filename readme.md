@@ -10,20 +10,41 @@ The following must be installed and working properly. For information about inst
 * Octavi IFR-1 (https://www.octavi.net/)
 
 ### Installation of this script
-To install this script, copy all files in the src directory to the XPLANE_BASE_DIRECTORY/Resources/plugins/FlyWithLua/Scripts directory.
 
-### Configuration of the Octavi IFR-1 device
-In order for this script to locate the Octavi IFR-1 device, you must do the following:
+#### Automated Installation (Recommended)
+The easiest way to install this script is to use the included setup script:
+
 1. If the Octavi IFR-1 device is attached, disconnect it.
-2. Create udev device rule for the device by running
+2. Open a terminal in the directory containing the setup.sh script.
+3. Run the setup script with sudo:
 ```bash
-echo "SUBSYSTEM==\"hidraw\", ATTRS{idProduct}==\"e6d6\", ATTRS{idVendor}==\"04d8\", MODE=\"0777\"" | sudo tee /etc/udev/rules.d/99-my-hid-device.rules
+sudo ./setup.sh
 ```
-3. Force Linux to reload the rules by running
+4. Follow the on-screen instructions.
+5. When the script completes successfully, connect the Octavi IFR-1 device and start X-Plane.
+
+The setup script will:
+- Find your X-Plane installation automatically
+- Check if X-Plane is running
+- Verify FlyWithLua is installed
+- Copy the necessary script files
+- Set up the required udev rules
+- Guide you through the entire process with clear instructions
+
+#### Manual Installation (Alternative)
+If you prefer to install manually, follow these steps:
+
+1. Copy all files in the src directory to the XPLANE_BASE_DIRECTORY/Resources/plugins/FlyWithLua/Scripts directory.
+2. If the Octavi IFR-1 device is attached, disconnect it.
+3. Create udev device rule for the device by running:
+```bash
+echo "SUBSYSTEM==\"hidraw\", ATTRS{idProduct}==\"e6d6\", ATTRS{idVendor}==\"04d8\", MODE=\"0777\"" | sudo tee /etc/udev/rules.d/99-octavi.rules
+```
+4. Force Linux to reload the rules by running:
 ```bash
 sudo udevadm control --reload-rules
 ```
-4. Connect the Octavi IFR-1 device.
+5. Connect the Octavi IFR-1 device.
 
 ### Using the Octavi IFR-1 device
 For information about how to use the Octavi IFR-1 device, please refer to their website.  
