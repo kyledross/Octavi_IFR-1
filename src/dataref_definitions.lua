@@ -1,5 +1,3 @@
---dataref definitions
-
 COM1 = dataref_table("sim/cockpit2/radios/actuators/com1_standby_frequency_hz_833")
 COM2 = dataref_table("sim/cockpit2/radios/actuators/com2_standby_frequency_hz_833")
 NAV1 = dataref_table("sim/cockpit/radios/nav1_stdby_freq_hz")

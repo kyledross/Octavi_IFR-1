@@ -4,11 +4,13 @@
 -- This script is used with FlyWithLua, a plugin for XPlane that allows scripts to interact
 -- with the simulation.
 --
--- This script is based on an original script provided by Octavi.
+-- This script is not associated with, nor supported by, Octavi GmbH
 
 local display_pop_up = 1 -- 0 = off, 1 = on
 
 print("Octavi: script running.")
+
+-- load datarefs and helper functions
 dofile(SCRIPT_DIRECTORY .. "dataref_definitions.lua")
 dofile(SCRIPT_DIRECTORY .. "bitwise_operators.lua")
 
@@ -55,7 +57,7 @@ local display_text = ""
 local display_end_time = 0
 local DISPLAY_DURATION = 5.0  -- How long to show the text in seconds
 
--- Function to draw the text (call this every frame)
+-- Function to draw the text box
 function draw_bottom_left_text()
     if os.clock() < display_end_time then
         -- Draw the text box
@@ -87,8 +89,8 @@ function display_bottom_left_text(text)
     end
 end
 
--- ------------------------------------------------
--- find USB HID device based on vid/pid
+-- find the Octavi IFR-1 device
+local device_found = 0
 for x in ipairs(ALL_HID_DEVICES) do
     if ALL_HID_DEVICES[x].vendor_id == 1240 and ALL_HID_DEVICES[x].product_id == 59094 then
         first_HID_device = hid_open_path(ALL_HID_DEVICES[x].path)
@@ -97,10 +99,9 @@ end
 
 if first_HID_device == nil then
     print("Octavi: device not found.")
-    display_end_time = os.clock() + 20
 else
     hid_set_nonblocking(first_HID_device, 1)
-    display_end_time = os.clock() + 20
+    device_found = 1
 end
 
 -- button states
@@ -133,18 +134,20 @@ local last_mode = 0
 -- main program functions
 
 function main()
-    nov, a, b, c, d, e, f, g, h, i = hid_read(first_HID_device, 9)
-    if (nov > 0) then
-        print(string.format("Octavi: nov:%s a:%s b:%s c:%s d:%s e:%s f:%s g:%s h:%s i:%s",
-                tostring(nov), tostring(a), tostring(b), tostring(c), tostring(d),
-                tostring(e), tostring(f), tostring(g), tostring(h), tostring(i)
-        ))
-        process_shift_button(c)
-        clear_bottom_and_right_buttons()
-        process_right_buttons(b)
-        process_bottom_buttons(c, d)
-        process_knob_rotation(f, g)
-        dispatch_mode(h)
+    if device_found ~= 0 then
+        nov, a, b, c, d, e, f, g, h, i = hid_read(first_HID_device, 9)
+        if (nov > 0) then
+            print(string.format("Octavi: nov:%s a:%s b:%s c:%s d:%s e:%s f:%s g:%s h:%s i:%s",
+                    tostring(nov), tostring(a), tostring(b), tostring(c), tostring(d),
+                    tostring(e), tostring(f), tostring(g), tostring(h), tostring(i)
+            ))
+            process_shift_button(c)
+            clear_bottom_and_right_buttons()
+            process_right_buttons(b)
+            process_bottom_buttons(c, d)
+            process_knob_rotation(f, g)
+            dispatch_mode(h)
+        end
     end
 end
 
