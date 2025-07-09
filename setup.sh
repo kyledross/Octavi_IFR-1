@@ -77,7 +77,7 @@ echo -e "${BLUE}==================================================${NC}"
 
 # Prompt user to disconnect the device
 info "Please ensure the Octavi IFR-1 device is disconnected before proceeding."
-read -p "Is the device disconnected? (y/n): " device_disconnected
+read -r -p "Is the device disconnected? (y/n): " device_disconnected
 
 if [[ ! "$device_disconnected" =~ ^[Yy]$ ]]; then
     error "Please disconnect the device and run the script again."
@@ -173,9 +173,7 @@ COPIED_FILES=()
 for file in "$SOURCE_DIRECTORY"/*.lua; do
     if [ -f "$file" ]; then
         filename=$(basename "$file")
-        cp "$file" "$TARGET_DIRECTORY/"
-        
-        if [ $? -eq 0 ]; then
+        if cp "$file" "$TARGET_DIRECTORY/"; then
             COPIED_FILES+=("$TARGET_DIRECTORY/$filename")
             CLEANUP_ACTIONS="rm -f '$TARGET_DIRECTORY/$filename'; $CLEANUP_ACTIONS"
         else
