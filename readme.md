@@ -4,10 +4,13 @@ This script allows the use of the Octavi IFR-1 device with the Linux version of 
 _Note: For Windows-based installations of X-Plane, there are other plugins available for the Octavi IFR-1 device.  See the Octavi website for more information._
 
 ### Requirements
-The following must be installed and working properly. For information about installation and configuration, please refer to their respective websites.  
+The following software must be installed and working properly. For information about installation and configuration, please refer to their respective websites.  
 * X-Plane 12.x (https://www.x-plane.com/)  
-* FlyWithLua (https://github.com/X-Friese/FlyWithLua)  
+* FlyWithLua (https://github.com/X-Friese/FlyWithLua)
+
+The following hardware is necessary:
 * Octavi IFR-1 (https://www.octavi.net/)
+
 
 ### Installation of this script
 
@@ -49,10 +52,10 @@ sudo udevadm control --reload-rules
 ### Using the Octavi IFR-1 device
 For information about how to use the Octavi IFR-1 device, please refer to their website.  
 
-But, a brief explanation of how to use the device is below.
+A brief explanation of how to use the device is below.
 
 #### Contexts
-The 8 keys in the center of the device (COM1, COM2, NAV1, NAV2, FMS1, FMS2, AP, and XPDR) allow you to choose the context of the device.  There are also additional contexts in blue above some of the keys, labelled HDG , BARO, CRS1, CRS2, and MODE.  
+The eight keys in the center of the device (COM1, COM2, NAV1, NAV2, FMS1, FMS2, AP, and XPDR) allow you to choose the context of the device.  There are also additional contexts in blue above some keys, labelled HDG, BARO, CRS1, CRS2, and MODE.  
 
 The "context" of the device is what system is currently being controlled by the device.  So, for example, if you wanted to control autopilot functions of the aircraft, you would press the AP button.  
 
@@ -62,10 +65,10 @@ Not every aircraft will have every system represented by the contexts.
 
 
 ##### COM1 and COM2
-These control the COM1 and COM2 radios.  When either of these buttons are selected, rotate the inner and outer knobs to choose the desired frequency.  To swap the active and standby frequencies, press the <--> (swap) button below the knobs.
+These control the COM1 and COM2 radios.  When either of these buttons are selected, rotate the inner and outer knobs to choose the desired frequency.  To swap the active and standby frequencies, press the ↔ (swap) button below the knobs.
 
 ##### NAV1 and NAV2
-These control the NAV1 and NAV2 radios.  When either of these buttons are selected, rotate the inner and outer knobs to choose the desired frequency.  To swap the active and standby frequencies, press the <--> (swap) button below the knobs.
+These control the NAV1 and NAV2 radios.  When either of these buttons are selected, rotate the inner and outer knobs to choose the desired frequency.  To swap the active and standby frequencies, press the ↔ (swap) button below the knobs.
 
 ##### FMS1 and FMS2
 These control the flight management systems.  Depending on the aircraft, FMS1 represents the pilot or primary flight management screen, and FMS2 represents the copilot or right flight management screen.    
@@ -75,7 +78,7 @@ When one of these is active, the action buttons along the right-side of the IFR-
 This button controls the autopilot system.  When this is selected, the white-labeled action buttons along the bottom of the IFR-1 device can be used to control the autopilot.  
 Functions like altitude and VS can be adjusted using the inner and outer knobs.  
 VPATH can be armed by pressing the inner knob switch.  
-FLC can be selected by pressing the <--> (swap) button beneath the knobs.
+FLC can be selected by pressing the ↔ (swap) button beneath the knobs.
 
 ##### XPDR
 This button controls the transponder code.  When this is selected, use the inner and outer knobs to change the squawk code.
@@ -104,4 +107,4 @@ Use the inner and outer knobs to change the transponder mode.
 This script was originally created through reverse engineering and the guidance of sample scripts provided by Octavi.
 For more information about the Octavi IFR-1, please visit https://octavi.net.
 
-This project is not affiliated with or supported by Octavi. This is a community effort.
+This project is not affiliated with, nor supported by, Octavi GmbH. This is a community effort.
