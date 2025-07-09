@@ -1,7 +1,9 @@
 # Octavi IFR-1 Script for X-Plane 12 and FlyWithLua
-This script allows the use of the Octavi IFR-1 device with the Linux version of X-Plane through the use of the FlyWithLua plugin.  
+This script allows the use of the Octavi IFR-1 device with the Linux version of X-Plane through the use of the FlyWithLua plugin. 
+For Windows-based installations of X-Plane, there are other plugins available for the Octavi IFR-1 device.  See the Octavi website for more information.
 
-_Note: For Windows-based installations of X-Plane, there are other plugins available for the Octavi IFR-1 device.  See the Octavi website for more information._
+_Note: This project is not affiliated with, nor supported by, Octavi GmbH. This is a community effort._
+
 
 ### Requirements
 The following software must be installed and working properly. For information about installation and configuration, please refer to their respective websites.  
@@ -11,7 +13,6 @@ The following software must be installed and working properly. For information a
 The following hardware is necessary:
 * Octavi IFR-1 (https://www.octavi.net/)
 
-
 ### Installation of this script
 
 #### Automated Installation (Recommended)
@@ -19,12 +20,16 @@ The easiest way to install this script is to use the included setup script:
 
 1. If the Octavi IFR-1 device is attached, disconnect it.
 2. Open a terminal in the directory containing the setup.sh script.
-3. Run the setup script with sudo:
+3. Make the script executable by running:
+```bash
+chmod +x ./setup.sh
+```
+4. Run the setup script with sudo:
 ```bash
 sudo ./setup.sh
 ```
-4. Follow the on-screen instructions.
-5. When the script completes successfully, connect the Octavi IFR-1 device and start X-Plane.
+5. Follow the on-screen instructions.
+6. When the script completes successfully, connect the Octavi IFR-1 device and start X-Plane.
 
 The setup script will:
 - Find your X-Plane installation automatically
@@ -106,5 +111,3 @@ Use the inner and outer knobs to change the transponder mode.
 
 This script was originally created through reverse engineering and the guidance of sample scripts provided by Octavi.
 For more information about the Octavi IFR-1, please visit https://octavi.net.
-
-This project is not affiliated with, nor supported by, Octavi GmbH. This is a community effort.
