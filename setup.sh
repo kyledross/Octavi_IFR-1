@@ -53,27 +53,27 @@ fi
 ORIGINAL_USER=${SUDO_USER:-$(whoami)}
 USER_HOME=$(eval echo "~$ORIGINAL_USER")
 
+# Welcome message
+echo -e "${BLUE}=============================================${NC}"
+echo -e "${BLUE} Octavi IFR-1 Setup Script                  ${NC}"
+echo -e "${BLUE}                                            ${NC}"
+echo -e "${BLUE} This will setup the Octavi IFR-1           ${NC}"
+echo -e "${BLUE} device for use in X-Plane 12 in Linux.     ${NC}"
+echo -e "${BLUE}                                            ${NC}"
+echo -e "${BLUE} Note: This project is not affiliated       ${NC}"
+echo -e "${BLUE} with, nor supported by, Octavi GmbH.       ${NC}"
+echo -e "${BLUE}                                            ${NC}"
+echo -e "${BLUE} This project is a community effort.        ${NC}"
+echo -e "${BLUE}                                            ${NC}"
+echo -e "${BLUE} For more information on the Octavi         ${NC}"
+echo -e "${BLUE} IFR-1 device, please visit                 ${NC}"
+echo -e "${BLUE} https://www.octavi.net/                    ${NC}"
+echo -e "${BLUE}                                            ${NC}"
+echo -e "${BLUE}=============================================${NC}"
+
 info "Running as: $(whoami)"
 info "Original user: $ORIGINAL_USER"
 info "User home directory: $USER_HOME"
-
-# Welcome message
-echo -e "${BLUE}==================================================${NC}"
-echo -e "${BLUE}      Octavi IFR-1 Setup Script                  ${NC}"
-echo -e "${BLUE}                                                 ${NC}"
-echo -e "${BLUE}      This will setup the Octavi IFR-1           ${NC}"
-echo -e "${BLUE}      device for use in X-Plane 12.              ${NC}"
-echo -e "${BLUE}                                                 ${NC}"
-echo -e "${BLUE}      Note: This project is not affiliated       ${NC}"
-echo -e "${BLUE}      with, nor supported by, Octavi GmbH.       ${NC}"
-echo -e "${BLUE}                                                 ${NC}"
-echo -e "${BLUE}      This project is a community effort.        ${NC}"
-echo -e "${BLUE}                                                 ${NC}"
-echo -e "${BLUE}      For more information on the Octavi         ${NC}"
-echo -e "${BLUE}      IFR-1 device, please visit                 ${NC}"
-echo -e "${BLUE}      https://www.octavi.net/                    ${NC}"
-echo -e "${BLUE}                                                 ${NC}"
-echo -e "${BLUE}==================================================${NC}"
 
 # Prompt user to disconnect the device
 info "Please ensure the Octavi IFR-1 device is disconnected before proceeding."
