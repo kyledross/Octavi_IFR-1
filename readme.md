@@ -4,6 +4,12 @@ For Windows-based installations of X-Plane, there are other plugins available fo
 
 _Note: This project is not affiliated with, nor supported by, Octavi GmbH. This is a community effort._
 
+### What is the Octavi IFR-1?
+The Octavi IFR-1 is a compact and versatile USB controller designed to enhance flight simulators, such as X-Plane 12. It allows you to manage key aircraft instruments without relying on a mouse, which is especially useful for IFR (Instrument Flight Rules) procedures.  
+
+In X-Plane 12, the IFR-1 enables you to intuitively control a wide range of systems in general aviation aircraft. With its dual-axis rotary knob and selection buttons, you can easily manipulate communication and navigation radio frequencies, transponder codes, and autopilot settings such as heading, altitude, and vertical speed.  
+
+This script provides the necessary integration to make the Octavi IFR-1 functional within the Linux environment.
 
 ### Requirements
 The following software must be installed and working properly. For information about installation and configuration, please refer to their respective websites.  
