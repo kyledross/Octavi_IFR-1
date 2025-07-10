@@ -28,9 +28,9 @@ The easiest way to install this script is to use the included setup script:
 ```bash
 chmod +x ./setup.sh
 ```
-4. Run the setup script with sudo:
+4. Run the setup script:
 ```bash
-sudo ./setup.sh
+./setup.sh
 ```
 5. Follow the on-screen instructions.
 6. When the script completes successfully, connect the Octavi IFR-1 device and start X-Plane.
