@@ -1,5 +1,4 @@
 #!/bin/bash
-# GPL-3.0-or-later
 #
 # Setup script for Octavi IFR-1
 #
