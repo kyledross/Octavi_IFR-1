@@ -44,6 +44,7 @@ cleanup() {
 # Trap errors and call cleanup
 trap 'error "An unexpected error occurred. Exiting."' ERR
 
+# todo: don't require sudo until udev rules get written (if needed)
 # Check if script is run with sudo
 if [ "$EUID" -ne 0 ]; then
     error "This script must be run with sudo privileges. Please run: sudo $0"

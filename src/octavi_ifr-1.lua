@@ -551,6 +551,12 @@ function fms1_mode()
         process_g1000n1_range_adjustment()
         return
     end
+    if mode_shift_state then
+        print("Octavi: Cursor")
+        command_once("sim/GPS/g430n1_cursor")
+        command_once("sim/GPS/g1000n1_cursor")
+        toggle_shift_state()
+    end
     if aircraft_equipped_with_g1000() then
         process_g1000n1_actions()
     elseif aircraft_equipped_with_g430_or_g530() then
