@@ -111,9 +111,3 @@ This button controls the transponder mode.
 
 Use the inner and outer knobs to change the transponder mode.
 
-
-
-### Attributions
-
-This script was originally created through reverse engineering and the guidance of sample scripts provided by Octavi.
-For more information about the Octavi IFR-1, please visit https://octavi.net.
