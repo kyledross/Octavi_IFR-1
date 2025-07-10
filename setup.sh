@@ -44,12 +44,6 @@ cleanup() {
 # Trap errors and call cleanup
 trap 'error "An unexpected error occurred. Exiting."' ERR
 
-# todo: don't require sudo until udev rules get written (if needed)
-# Check if script is run with sudo
-if [ "$EUID" -ne 0 ]; then
-    error "This script must be run with sudo privileges. Please run: sudo $0"
-fi
-
 # Get the original user's home directory
 ORIGINAL_USER=${SUDO_USER:-$(whoami)}
 USER_HOME=$(eval echo "~$ORIGINAL_USER")
@@ -62,7 +56,8 @@ echo -e "${BLUE} This will setup the Octavi IFR-1           ${NC}"
 echo -e "${BLUE} device for use in X-Plane 12 in Linux.     ${NC}"
 echo -e "${BLUE}                                            ${NC}"
 echo -e "${BLUE} Note: This project is not affiliated       ${NC}"
-echo -e "${BLUE} with, nor supported by, Octavi GmbH.       ${NC}"
+echo -e "${BLUE} with, nor supported by, Octavi GmbH or     ${NC}"
+echo -e "${BLUE} Laminar Research.                          ${NC}"
 echo -e "${BLUE}                                            ${NC}"
 echo -e "${BLUE} This project is a community effort.        ${NC}"
 echo -e "${BLUE}                                            ${NC}"
@@ -187,11 +182,12 @@ success "All Lua scripts successfully copied to X-Plane."
 
 # Set up udev rules
 UDEV_RULE_FILE="/etc/udev/rules.d/99-octavi.rules"
+UDEV_RULE_CONTENT='SUBSYSTEM=="hidraw", ATTRS{idProduct}=="e6d6", ATTRS{idVendor}=="04d8", MODE="0777"'
 info "Setting up udev rules for Octavi IFR-1 device..."
 
 if [ ! -f "$UDEV_RULE_FILE" ]; then
-    echo 'SUBSYSTEM=="hidraw", ATTRS{idProduct}=="e6d6", ATTRS{idVendor}=="04d8", MODE="0777"' > "$UDEV_RULE_FILE"
-    CLEANUP_ACTIONS="rm -f '$UDEV_RULE_FILE'; $CLEANUP_ACTIONS"
+    echo "$UDEV_RULE_CONTENT" | sudo tee "$UDEV_RULE_FILE" > /dev/null
+    CLEANUP_ACTIONS="sudo rm -f '$UDEV_RULE_FILE'; $CLEANUP_ACTIONS"
     success "Created udev rule file: $UDEV_RULE_FILE"
 else
     info "Udev rule file already exists: $UDEV_RULE_FILE"
@@ -199,12 +195,12 @@ fi
 
 # Reload udev rules
 info "Reloading udev rules..."
-udevadm control --reload-rules
+sudo udevadm control --reload-rules
 success "Udev rules reloaded."
 
 # Final success message
 echo -e "${GREEN}==================================================${NC}"
-echo -e "${GREEN}      Octavi IFR-1 Setup Completed Successfully  ${NC}"
+echo -e "${GREEN} Octavi IFR-1 Setup Completed Successfully  ${NC}"
 echo -e "${GREEN}==================================================${NC}"
 info "You may now connect the Octavi IFR-1 device and start X-Plane."
 
