@@ -4,7 +4,7 @@
 -- This script is used with FlyWithLua, a plugin for XPlane that allows scripts to interact
 -- with the simulation.
 --
--- This script is not associated with, nor supported by, Octavi GmbH
+-- This script is not associated with, nor supported by, Octavi GmbH.
 
 local display_pop_up = 1 -- 0 = off, 1 = on
 

@@ -2,7 +2,7 @@
 This script allows the use of the Octavi IFR-1 device with the Linux version of X-Plane through the use of the FlyWithLua plugin. 
 For Windows-based installations of X-Plane, there are other plugins available for the Octavi IFR-1 device.  See the Octavi website for more information.
 
-_Note: This project is not affiliated with, nor supported by, Octavi GmbH or Laminar Research. This is a community effort._
+_Note: This project is not affiliated with, nor supported by, Octavi GmbH or Laminar Research._
 
 ### What is the Octavi IFR-1?
 The Octavi IFR-1 is a compact and versatile USB controller designed to enhance flight simulators, such as X-Plane 12. It allows you to manage key aircraft instruments without relying on a mouse.  
