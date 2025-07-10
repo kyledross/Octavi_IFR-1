@@ -553,8 +553,15 @@ function fms1_mode()
     end
     if mode_shift_state then
         print("Octavi: Cursor")
-        command_once("sim/GPS/g430n1_cursor")
-        command_once("sim/GPS/g1000n1_cursor")
+        -- todo: test against these aircraft systems
+        if aircraft_equipped_with_g430_or_g530() then
+            command_once("sim/GPS/g430n1_cursor")
+        elseif aircraft_equipped_with_g1000() then
+            command_once("sim/GPS/g1000n1_cursor")
+        else
+            command_once("sim/GPS/g430n1_cursor")
+            command_once("sim/GPS/g1000n1_cursor")
+        end
         toggle_shift_state()
     end
     if aircraft_equipped_with_g1000() then
@@ -579,8 +586,15 @@ function fms2_mode()
     end
     if mode_shift_state then
         print("Octavi: Cursor")
-        command_once("sim/GPS/g430n2_cursor")
-        command_once("sim/GPS/g1000n3_cursor")
+        -- todo: test against these aircraft systems
+        if aircraft_equipped_with_g430_or_g530() then
+            command_once("sim/GPS/g430n2_cursor")
+        elseif aircraft_equipped_with_g1000() then
+            command_once("sim/GPS/g1000n3_cursor")
+        else
+            command_once("sim/GPS/g430n2_cursor")
+            command_once("sim/GPS/g1000n3_cursor")
+        end
         toggle_shift_state()
     end
     if aircraft_equipped_with_g1000() then
