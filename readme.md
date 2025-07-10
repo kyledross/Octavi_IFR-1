@@ -3,7 +3,7 @@
 This script allows the use of the Octavi IFR-1 device with the Linux version of X-Plane through the use of the FlyWithLua plugin. 
 For Windows-based installations of X-Plane, there are other plugins available for the Octavi IFR-1 device.  See the Octavi website for more information.
 
-_Note: This project is not affiliated with, nor supported by, Octavi GmbH. This is a community effort._
+_Note: This project is not affiliated with, nor supported by, Octavi GmbH or Laminar Research. This is a community effort._
 
 ### What is the Octavi IFR-1?
 The Octavi IFR-1 is a compact and versatile USB controller designed to enhance flight simulators, such as X-Plane 12. It allows you to manage key aircraft instruments without relying on a mouse, which is especially useful for IFR (Instrument Flight Rules) procedures.  
@@ -96,18 +96,18 @@ FLC can be selected by pressing the ↔ (swap) button beneath the knobs.
 This button controls the transponder code.  When this is selected, use the inner and outer knobs to change the squawk code.
 
 ##### HDG
-_To activate this button, first press the COM1 button. Then, press down on the inner knob button.  This activates the HDG feature of this button.  You will see a small 'HDG' indicator on-screen in the bottom-right corner for a few seconds._
+_To activate this button, first press the COM1 button. Then, press down on the inner knob button.  This activates the HDG feature of this button.  You will see a small 'HDG' indicator on-screen in the bottom-left corner for a few seconds._
 This button controls the heading while navigating. Use the inner and outer knobs to adjust the heading. 
 
 ##### BARO
-_To activate this button, first press the COM2 button. Then, press down on the inner knob button.  This activates the BARO feature of this button.  You will see a small 'BARO' indicator on-screen in the bottom-right corner for a few seconds._
+_To activate this button, first press the COM2 button. Then, press down on the inner knob button.  This activates the BARO feature of this button.  You will see a small 'BARO' indicator on-screen in the bottom-left corner for a few seconds._
 This button controls the barometer/altimeter setting. Use the inner and outer knobs to adjust the barometer value.
 
 ##### CRS1 and CRS2
-_To activate this button, first press the NAV1 or NAV2 button. Then, press down on the inner knob button.  This activates the CRS1 or CRS2 feature of this button.  You will see a small 'CRSx' indicator on-screen in the bottom-right corner for a few seconds._
+_To activate this button, first press the NAV1 or NAV2 button. Then, press down on the inner knob button.  This activates the CRS1 or CRS2 feature of this button.  You will see a small 'CRSx' indicator on-screen in the bottom-left corner for a few seconds._
 
 ##### MODE
-_To activate this button, first press the XPDR button. Then, press down on the inner knob button.  This activates the MODE feature of this button.  You will see a small 'MODE' indicator on-screen in the bottom-right corner for a few seconds._
+_To activate this button, first press the XPDR button. Then, press down on the inner knob button.  This activates the MODE feature of this button.  You will see a small 'MODE' indicator on-screen in the bottom-left corner for a few seconds._
 This button controls the transponder mode.      
 
 Use the inner and outer knobs to change the transponder mode.
