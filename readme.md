@@ -4,6 +4,13 @@ For Windows-based installations of X-Plane, there are other plugins available fo
 
 _Note: This project is not affiliated with, nor supported by, Octavi GmbH or Laminar Research. This is a community effort._
 
+### Branches
+**Master** is the latest reasonably-tested version. It may not have the latest features or fixes.  If you are installing this as an end-user, this is the branch you will want to start with.  
+
+**Development** is where the latest features and fixes get tested. Once they seem to be stable, they will be merged into Master.  If you are an end-user, use this branch if you need a fix or new feature that is being developed. This branch may not be fully stable and may change a number of times before being merged into Master.  
+
+**All other branches** are where new features or majot bug fixes are being developed.  These are not stable and reliable branches, and the code within them may be in a broken state.  As an end-user, it is advised that you avoid these branches and use Master or Development.
+
 ### What is the Octavi IFR-1?
 The Octavi IFR-1 is a compact and versatile USB controller designed to enhance flight simulators, such as X-Plane 12. It allows you to manage key aircraft instruments without relying on a mouse.  
 
