@@ -63,6 +63,17 @@ For information about how to use the Octavi IFR-1 device, please refer to their 
 
 A brief explanation of how to use the device is below.
 
+#### Aircraft capabilities
+Different aircraft are equipped with different devices. Some have only radios, some have radios and autopilot, some have full flight management systems. The capabilities depend on the aircraft and the aircraft model's developer. This script is designed to accomodate certain default X-Plane aircraft and equipment, but can be expanded through coding for more.  
+
+Built-in X-Plane 12 aircraft that it has been tested with, and with which it works reasonably well, include:  
+* Cessna 172
+* Cessna Citation
+* Cirrus SR-22
+* Cirrus SF-50
+
+Others may also work... give it a try.
+
 #### Contexts
 The eight keys in the center of the device (COM1, COM2, NAV1, NAV2, FMS1, FMS2, AP, and XPDR) allow you to choose the context of the device.  There are also additional contexts in blue above some keys, labelled HDG, BARO, CRS1, CRS2, and MODE.  
 
