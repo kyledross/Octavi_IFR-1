@@ -9,6 +9,7 @@
 local display_pop_up = 1 -- 0 = off, 1 = on
 
 print("Octavi: script running.")
+print(AIRCRAFT_FILENAME)
 
 -- setup datarefs
 COM1 = dataref_table("sim/cockpit2/radios/actuators/com1_standby_frequency_hz_833")
@@ -289,6 +290,10 @@ function aircraft_equipped_with_g430_or_g530()
             or AIRCRAFT_FILENAME == "C90B.acf"
             or AIRCRAFT_FILENAME == "PA-18-150.acf" -- not really... has only com and nav radios
             or AIRCRAFT_FILENAME == "L5_Sentinel.acf" -- not really... only has com1
+end
+
+function aircraft_equipped_with_collins_aps_65()
+    return AIRCRAFT_FILENAME == "C90B.acf"
 end
 
 -- --------------------------------------------------------
@@ -910,7 +915,8 @@ function change_leds()
     if hasbit(AP_STATE[0], bit(2)) then
         ap_active = ap_active + 2
     end -- HDG
-    if hasbit(AP_STATE[0], bit(10)) then
+    if ((aircraft_equipped_with_g1000() or aircraft_equipped_with_g430_or_g530()) and hasbit(AP_STATE[0], bit(10)))
+            or (aircraft_equipped_with_collins_aps_65() and hasbit(AP_STATE[0], bit(9))) then
         ap_active = ap_active + 4
     end -- NAV
     if APPROACH_STATUS > 0 then
