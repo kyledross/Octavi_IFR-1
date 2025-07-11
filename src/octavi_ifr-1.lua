@@ -195,10 +195,10 @@ function main()
     if device_found ~= 0 then
         nov, a, b, c, d, e, f, g, h, i = hid_read(first_HID_device, 9)
         if (nov > 0) then
-            print(string.format("Octavi: nov:%s a:%s b:%s c:%s d:%s e:%s f:%s g:%s h:%s i:%s",
-                    tostring(nov), tostring(a), tostring(b), tostring(c), tostring(d),
-                    tostring(e), tostring(f), tostring(g), tostring(h), tostring(i)
-            ))
+--            print(string.format("Octavi: nov:%s a:%s b:%s c:%s d:%s e:%s f:%s g:%s h:%s i:%s",
+--                    tostring(nov), tostring(a), tostring(b), tostring(c), tostring(d),
+--                    tostring(e), tostring(f), tostring(g), tostring(h), tostring(i)
+--            ))
             process_shift_button(c)
             clear_bottom_and_right_buttons()
             process_right_buttons(b)
