@@ -273,23 +273,23 @@ end
 -- to break these out into separate modules so as to keep this one generic to only simulator commands.
 
 function aircraft_equipped_with_g1000()
-    return (AIRCRAFT_FILENAME == "Cirrus SR22.acf"
-            or AIRCRAFT_FILENAME == "CirrusSF50.acf"
-            or AIRCRAFT_FILENAME == "Cessna_172SP_G1000.acf"
-            or AIRCRAFT_FILENAME == "Cessna_CitationX.acf" -- not really... has "Xplanewell" devices.. FMS1 and 2 not operational... everything else seems to work
-            or AIRCRAFT_FILENAME == "N844X.acf"
-            or AIRCRAFT_FILENAME == "RV-10.acf"
+    return (AIRCRAFT_FILENAME == "Cirrus SR22.acf" -- Cirrus SR-22
+            or AIRCRAFT_FILENAME == "CirrusSF50.acf" -- Cirrus Vision SF50
+            or AIRCRAFT_FILENAME == "Cessna_172SP_G1000.acf" -- Cessna Skyhawk with G1000
+            or AIRCRAFT_FILENAME == "Cessna_CitationX.acf" -- not really... has "Xplanewell" devices.. FMS1 and 2 not operational... everything else seems to work... look into mapping FMS buttons to this
+            or AIRCRAFT_FILENAME == "N844X.acf" -- Lancair Evolution... not fully functional at the moment... haven't figured out altitude and vertical speed
+            or AIRCRAFT_FILENAME == "RV-10.acf" -- Van's RV-10
     )
 end
 
 function aircraft_equipped_with_g430_or_g530()
     -- todo: the button layout is different between g430 and g530... maybe factor out the control for them?
-    return AIRCRAFT_FILENAME == "Cessna_172SP.acf"
+    return AIRCRAFT_FILENAME == "Cessna_172SP.acf" -- Cessna 172 SP
             or AIRCRAFT_FILENAME == "Cessna_172SP_seaplane.acf"
-            or AIRCRAFT_FILENAME == "Baron_58.acf" -- only has x530 on FMS1.. FMS2 is non-existent
-            or AIRCRAFT_FILENAME == "C90B.acf"
-            or AIRCRAFT_FILENAME == "PA-18-150.acf" -- not really... has only com and nav radios
-            or AIRCRAFT_FILENAME == "L5_Sentinel.acf" -- not really... only has com1
+            or AIRCRAFT_FILENAME == "Baron_58.acf" -- Beechcraft Baron 58... only has x530 on FMS1.. FMS2 is non-existent
+            or AIRCRAFT_FILENAME == "C90B.acf" -- Beechcraft KingAir C90B
+            or AIRCRAFT_FILENAME == "PA-18-150.acf" -- Piper Cub... not really... has only com and nav radios
+            or AIRCRAFT_FILENAME == "L5_Sentinel.acf" -- Stinson L5 Sentinel... not really... only has com1
 end
 
 function aircraft_equipped_with_collins_aps_65()
